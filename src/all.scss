@@ -46,6 +46,10 @@
     &:hover {
       background-color: red;
     }
+    &:disabled {
+      cursor: not-allowed;
+      background-color: #696969;
+    }
   }
   .finish {
     &-label {
