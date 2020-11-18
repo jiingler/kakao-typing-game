@@ -1,0 +1,31 @@
+{
+  "name": "kakao-typing-game",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "lodash": "^4.17.20",
+    "webpack": "^4.39.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiingler/kakao-typing-game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jiingler/kakao-typing-game/issues"
+  },
+  "homepage": "https://github.com/jiingler/kakao-typing-game#readme"
+}
