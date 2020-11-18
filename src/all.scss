@@ -4,13 +4,13 @@
 
 .container {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 50px auto 0;
 }
 
 .header {
   ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     li {
       font-size: 50px;
     }
@@ -22,7 +22,7 @@
   .question-label {
     font-size: 72px;
   }
-  .answer-input, .start-btn {
+  .answer-input, .btn {
     background-color: #4ba3f5;
     color: #fff;
     border: none;
@@ -38,13 +38,24 @@
       text-align: center;
     }
   }
-  .start-btn {
+  .btn {
     font-size: 30px;
     line-height: 40px;
     padding: 10px 30px;
     cursor: pointer;
     &:hover {
       background-color: red;
+    }
+  }
+  .finish {
+    &-label {
+      font-size: 30px;
+    }
+    &-score {
+      font-size: 50px;
+    }
+    &-average {
+      font-size: 20px;
     }
   }
 }

@@ -33,6 +33,7 @@ function nextQuestion() {
   if (jsonContent.length === 0) {
     // end
     // 到中止頁
+    window.location.replace('./finish.html');
     return;
   }
 
