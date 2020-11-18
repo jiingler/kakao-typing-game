@@ -1,0 +1,50 @@
+@import './style/variable';
+@import './style/reset';
+@import './style/layout';
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  ul {
+    display: flex;
+    justify-content: space-between;
+    li {
+      font-size: 50px;
+    }
+  }
+}
+
+.content {
+  text-align: center;
+  .question-label {
+    font-size: 72px;
+  }
+  .answer-input, .start-btn {
+    background-color: #4ba3f5;
+    color: #fff;
+    border: none;
+  }
+  .answer-input {
+    height: 60px;
+    font-size: 40px;
+    line-height: 60px;
+    border-radius: 10px;
+    text-align: center;
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: white;
+      text-align: center;
+    }
+  }
+  .start-btn {
+    font-size: 30px;
+    line-height: 40px;
+    padding: 10px 30px;
+    cursor: pointer;
+    &:hover {
+      background-color: red;
+    }
+  }
+}
