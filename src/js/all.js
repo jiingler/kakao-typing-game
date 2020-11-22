@@ -1,6 +1,6 @@
-const { 
-  generateStartBtnText, 
-  fetchJSONData, 
+const {
+  generateStartBtnText,
+  fetchJSONData,
   calculateAverageTime,
   checkInputIsCorrect
 } = require('./utils')
@@ -40,14 +40,53 @@ const gameTitleText = '타자게임';
 
 const jsonServerUrl = 'https://my-json-server.typicode.com/kakaopay-fe/resources/words';
 
+const router = () => {
+  console.log('route')
+  // create route
+  let gameRouter = [
+    {
+      path: '/',
+      name: 'start'
+    },
+    {
+      path: '/finish',
+      name: 'finish'
+    },
+  ]
+
+  const currentPath = window.location.pathname;
+  if (currentPath === '/') {
+    startContainer.style.display = 'block';
+    finishContainer.style.display = 'none';
+  } else {
+    console.log('###')
+    const route = gameRouter.routes.filter(route => {
+      return r.path === currentPath
+    })[0]
+    console.log(route)
+    if (route) {
+      console.log(route)
+      finishContainer.style.display = 'block';
+      startContainer.style.display = 'none';
+    } else {
+      window.body.innerHTML = 'You are at 404 page.'
+    }
+  }
+  // ===============
+}
+
 /**
  * initialize game
  */
-window.onload = (async ()=> {
-  finishContainer.style.display = 'none';
+window.onload = (async () => {
+  console.log('onload')
+  router();
   startBtn.disabled = true;
   await getJson();
 })
+
+window.addEventListener("popstate", router);
+window.addEventListener("reload", router);
 
 /**
  * start or reset
@@ -73,7 +112,7 @@ restartBtn.addEventListener('click', (event) => {
   event.preventDefault()
   startContainer.style.display = 'block';
   finishContainer.style.display = 'none';
-  window.history.pushState(null, gameTitleText, '/start');
+  window.history.pushState(null, gameTitleText, '/');
   resetGame();
 })
 
@@ -82,7 +121,7 @@ restartBtn.addEventListener('click', (event) => {
  */
 function nextQuestion() {
   clearInterval(countdown);
-  
+
   // if out of questions
   if (jsonContent.length === 0) {
     startContainer.style.display = 'none';
@@ -99,7 +138,7 @@ function nextQuestion() {
   let randomNum = _.random(0, jsonContent.length - 1)
   nowQuestion = jsonContent[randomNum].text;
   nowSecond = jsonContent[randomNum].second;
-  
+
   // remove question from JSON list
   jsonContent.splice(randomNum, 1);
 
@@ -116,7 +155,7 @@ function nextQuestion() {
         nowScore = Number(scoreSpan.textContent);
         nextQuestion();
       }
-    }    
+    }
   }, 1000)
   questionLabel.textContent = nowQuestion;
 }
