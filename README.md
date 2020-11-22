@@ -17,3 +17,6 @@ If you want to restart, please click the '다시 시작' button to back to start
 다음, vanilla JS에서 routing를 해 본 적이 없어서 인터넷에서 서료를 찾았습니다. Blog도 보고 youtube도 봤습니다. 
 마지막, unit test도 해 본 적이 없어서 인터넷에서도 서료를 찾았습니다. 
 이렇게 처음에는 하나도 몰랐는데 지금은 이 과제를 완성하고 많이 기술도 배웠습니다.합격하지 않아도 괜찮습니다. 이 과제가 제 성장하는 동력이고 좋은 경험이 되었습니다. 좋은 기회를 주셔서 감사합니다.
+
+
+github URL: https://github.com/jiingler/kakao-typing-game
